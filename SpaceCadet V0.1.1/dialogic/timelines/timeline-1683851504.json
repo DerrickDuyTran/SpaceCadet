@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1683851446.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Welcome to Space Cadet -DEMO-.\nUse A and D to move left and right, space to jump, and shift to dash "
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1683851504.json",
+		"name": "timeline-1"
+	}
+}

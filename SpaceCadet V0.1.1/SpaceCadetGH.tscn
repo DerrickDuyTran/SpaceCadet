@@ -1,0 +1,439 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://SpaceCadet.gd" type="Script" id=1]
+[ext_resource path="res://Animation/Astro_Sprite_Sheet.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "fall"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 16, 17 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "fallForward"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 24, 25 ]
+}
+
+[sub_resource type="Animation" id=19]
+resource_name = "idle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5, 0.75 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "jump"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 14, 15 ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "jumpForward"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 21, 22, 23 ]
+}
+
+[sub_resource type="Animation" id=21]
+resource_name = "landing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 18, 14, 0 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "landingForward"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 26, 21, 0 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "walk"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.16, 0.33, 0.5, 0.66, 0.83 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 7, 8, 9, 10, 11, 12 ]
+}
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 44, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 72, 44, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 44, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 24, 0, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 44, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 4 )
+region = Rect2( 24, 44, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 22, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 4 )
+region = Rect2( 24, 22, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 22, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 72, 22, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 22, 24, 22 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 120, 22, 24, 22 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": false,
+"name": "fall",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 7 ) ],
+"loop": true,
+"name": "idle",
+"speed": 4.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": false,
+"name": "jump",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "walk",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15, 22 )
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=23]
+
+[node name="SpaceCadet" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AstroSprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+centered = false
+hframes = 7
+vframes = 5
+frame = 1
+region_rect = Rect2( 0, 0, 240, 220 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AstroSprite"]
+anims/RESET = SubResource( 17 )
+anims/fall = SubResource( 18 )
+anims/fallForward = SubResource( 24 )
+anims/idle = SubResource( 19 )
+anims/jump = SubResource( 20 )
+anims/jumpForward = SubResource( 25 )
+anims/landing = SubResource( 21 )
+anims/landingForward = SubResource( 26 )
+anims/walk = SubResource( 22 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+visible = false
+frames = SubResource( 2 )
+animation = "idle"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 12, 11 )
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Raycast" type="Node2D" parent="."]
+position = Vector2( 9.5, 11 )
+
+[node name="RayCast01" type="RayCast2D" parent="Raycast"]
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast02" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -2 )
+rotation = -0.0872664
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast03" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -4 )
+rotation = -0.174533
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast04" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -6 )
+rotation = -0.261799
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast05" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -8 )
+rotation = -0.349066
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast06" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -10 )
+rotation = -0.436332
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast07" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -12 )
+rotation = -0.523599
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast08" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -14 )
+rotation = -0.610865
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast09" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -16 )
+rotation = -0.698132
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast10" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, -18 )
+rotation = -0.785398
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast11" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 2 )
+rotation = 0.0872665
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast12" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 4 )
+rotation = 0.174533
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast13" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 6 )
+rotation = 0.261799
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast14" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 8 )
+rotation = 0.349066
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast15" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 10 )
+rotation = 0.436332
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast16" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 12 )
+rotation = 0.523599
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast17" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 14 )
+rotation = 0.610865
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast18" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 16 )
+rotation = 0.698132
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="RayCast19" type="RayCast2D" parent="Raycast"]
+position = Vector2( 0, 18 )
+rotation = 0.785398
+enabled = true
+cast_to = Vector2( 500, 0 )
+collision_mask = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_bottom = 1000
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 12, 11 )
+scale = Vector2( 0.55, 0.525 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 23 )
+anim_player = NodePath("../AstroSprite/AnimationPlayer")
+parameters/blend_position = Vector2( -0.00169492, -0.00578034 )
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

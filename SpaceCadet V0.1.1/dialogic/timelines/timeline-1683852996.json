@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1683852962.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Throughout the levels, you can find collectables called [color=#6cced3]Diamonds[/color]!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1683852996.json",
+		"name": "timeline-2"
+	}
+}

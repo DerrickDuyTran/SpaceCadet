@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1683857916.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Hi, my name is Gene Eric, I'm a placeholder NPC!"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1683857940.json",
+		"name": "timeline-3"
+	}
+}
